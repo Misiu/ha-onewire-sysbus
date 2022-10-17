@@ -6,6 +6,9 @@ from homeassistant.const import Platform
 CONF_MOUNT_DIR = "mount_dir"
 DEFAULT_SYSBUS_MOUNT_DIR = "/sys/bus/w1/devices/"
 
+CONF_RESOLUTION = "resolution"
+DEFAULT_RESOLUTION = 9
+
 DOMAIN = "onewire_sysbus"
 
 DEVICE_SUPPORT_SYSBUS = ["10", "22", "28", "3B", "42"]

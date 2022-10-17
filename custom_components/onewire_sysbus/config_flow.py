@@ -9,12 +9,13 @@ from homeassistant.config_entries import ConfigFlow
 from homeassistant.core import HomeAssistant
 from homeassistant.data_entry_flow import FlowResult
 
-from .const import CONF_MOUNT_DIR, DEFAULT_SYSBUS_MOUNT_DIR, DOMAIN
+from .const import CONF_MOUNT_DIR, DEFAULT_SYSBUS_MOUNT_DIR, CONF_RESOLUTION, DEFAULT_RESOLUTION, DOMAIN
 from .onewirehub import InvalidPath, OneWireHub
 
 DATA_SCHEMA = vol.Schema(
     {
         vol.Required(CONF_MOUNT_DIR, default=DEFAULT_SYSBUS_MOUNT_DIR): str,
+        vol.Required(CONF_RESOLUTION, default=DEFAULT_RESOLUTION): vol.All(vol.Coerce(int), vol.Range(min=9, max=12)),
     }
 )
 
